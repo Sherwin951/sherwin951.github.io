@@ -1,9 +1,9 @@
 /* ── Typing Animation ────────────────────────────────────────────────────── */
 const phrases = [
+  "M.S. Computer Science Graduate.",
   "Python & Backend Developer.",
-  "API Builder.",
-  "SQL Engineer.",
-  "Data Pipeline Architect.",
+  "AI Application Builder.",
+  "Machine Learning Engineer.",
   "Problem Solver.",
 ];
 

@@ -99,6 +99,7 @@ nav .container {
 .nav-links li:nth-child(2) a::before { content: "02."; }
 .nav-links li:nth-child(3) a::before { content: "03."; }
 .nav-links li:nth-child(4) a::before { content: "04."; }
+.nav-links li:nth-child(5) a::before { content: "05."; }
 
 /* ── HERO ──────────────────────────────────────────────────────────────────── */
 #hero {
@@ -271,6 +272,25 @@ section { padding: 100px 0; }
   max-width: 280px;
 }
 
+/* ── NAV SOCIALS ───────────────────────────────────────────────────────────── */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-social-link {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.nav-social-link:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
 /* ── ABOUT ─────────────────────────────────────────────────────────────────── */
 #about .about-grid {
   display: grid;
@@ -356,6 +376,110 @@ section { padding: 100px 0; }
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.8px;
+}
+
+/* ── EDUCATION ─────────────────────────────────────────────────────────────── */
+#education .education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 32px;
+  align-items: start;
+  transition: var(--transition);
+}
+
+.edu-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(100,255,218,0.07);
+}
+
+.edu-period {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.edu-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.edu-dates {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 4px;
+}
+
+.edu-school {
+  font-size: 0.92rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.edu-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.edu-gpa {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.edu-gpa span { color: var(--accent); }
+
+.edu-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-research-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-sql);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.fill-ai { background: linear-gradient(90deg, #c792ea, #82aaff); }
+
+@media (max-width: 600px) {
+  .edu-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px 20px;
+  }
 }
 
 /* ── SKILLS ────────────────────────────────────────────────────────────────── */
@@ -562,6 +686,42 @@ section { padding: 100px 0; }
 .cm  { color: #546e7a; font-style: italic; }
 .num { color: #f78c6c; }
 
+/* ── ML PROJECTS SUB-SECTION ──────────────────────────────────────────────── */
+.ml-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 60px;
+  margin-bottom: 32px;
+}
+
+.ml-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ml-projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+}
+
+.level-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.badge-beginner    { background: rgba(100,255,218,0.15); color: #64ffda; border: 1px solid #64ffda; }
+.badge-intermediate { background: rgba(247,201,72,0.15);  color: #f7c948; border: 1px solid #f7c948; }
+.badge-advanced    { background: rgba(199,120,221,0.15); color: #c778dd; border: 1px solid #c778dd; }
+
 /* ── CONTACT ───────────────────────────────────────────────────────────────── */
 #contact { text-align: center; }
 
@@ -654,8 +814,9 @@ footer a { color: var(--accent); }
 
 /* ── RESPONSIVE ────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .nav-links { gap: 16px; }
+  .nav-links { gap: 12px; }
   .nav-links a::before { display: none; }
+  .nav-socials { display: none; }
 
   #about .about-grid {
     grid-template-columns: 1fr;
